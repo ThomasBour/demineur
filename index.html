@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Démineur</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap">
+    </head>
+
+    <body>
+        <audio autoplay loop id="music" class="hidden" src=""></audio>
+        <audio id="audioLose" class="hidden" src=""></audio>
+        <audio id="audioWin" class="hidden" src=""></audio>
+        <!-- audio que j'aimerais mettre mais ou je galere un peu -->
+        <header>
+            <div class="title">
+                <i class="fas fa-bomb"></i>
+                <h1>Démineur</h1>
+            </div>
+            <nav>
+                <ul class="nav">
+                    <li>
+                        <a id="homeLink" href="#">HOME</a>
+                    </li>
+                    <li>
+                        <a id="rulesLink" href="#">Règles</a>
+                    </li>
+                    <li>
+                        <a id="aboutLink" href="#">ABOUT</a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <section id="homePage" class="home-main">
+            <article class="home-intro">
+                <i class="fas fa-bomb"></i>
+                <p>Nettoie la map mais fais attention... Tu es à un clic de tout faire exploser !</p>
+            </article>
+            <article class="home-levels">
+                <h2>Choisis ta difficulté</h2>
+                <div class="choose-level">
+                    <div>
+                        <a id="gameEasyLink" class="easy" href="#"><i class="fas fa-paw"></i></a>
+                        <p>FACILE</p>
+                    </div>
+                    <div>
+                        <a id="gameMediumLink" class="medium" href="#"><i class="fas fa-star"></i></a>
+                        <p>NORMAL</p>
+                    </div>
+                    <div>
+                        <a id="gameHardLink" class="hard" href="#"><i class="fas fa-biohazard"></i></a>
+                        <p>DIFFICILE</p>
+                    </div>
+                </div>
+            </article>
+        </section>
+
+        <!-- =========== -->
+        <!-- RULES SECTION -->
+        <!-- =========== -->
+        <section id="rulesPage" class="rules-main hidden">
+            <article class="rules-board">
+                <img src="./img/exemple.png" alt="board">
+            </article>
+            <article class="rules-text">
+                <h2>Comment jouer</h2>
+                <div>
+                    <span>></span>
+                    <p>Le compteur indiquera le nombre de mines restantes</p>
+                </div>
+                <div>
+                    <span>></span>
+                    <p>Clique sur une case. Le nombre qui est donné est le nombre de mines se trouvant aux alentours de cette même case.</p>
+                </div>
+                <div>
+                    <span>></span>
+                    <p>Devine ou se trouvent les mines, et clique droit pour les noter.</p>
+                </div>
+                <div>
+                    <span>></span>
+                    <p>Si tu as révellé toutes les cases safe, Bravo : Tu as GAGNE !</p>
+                </div>
+                <div>
+                    <span>></span>
+                    <p>Si tu cliques sur une mine... BOUM !</p>
+                </div>
+            </article>
+        </section>
+        <section id="aboutPage" class="about-main hidden">
+            <article class="about-avatar">
+                <img src="./img/mariomauvais-removebg-preview.png" alt="avatar">
+            </article>
+            <article class="about-info">
+                <h2>Player 1</h2>
+                <div>
+                    <span>></span>
+                    <p>Thomas Bourgeois</p>
+                </div>
+                <div>
+                    <span>></span>
+                    <p>23 years-old, Bruxelles</p>
+                </div>
+                <div>
+                    <span>></span>
+                    <p>Becode 2020-2021</p>
+                </div>
+                <div>
+                    <span>></span>
+                    <p>C'est mon premier vrai projet perso</p>
+                </div>
+            </article>
+        </section>
+        <section id="gamePage" class="game-main hidden">
+            <article>
+                <div>
+                    <button id="button" type="button" class="game-button start-button"></button>
+                </div>
+            </article>
+            <article class="board">
+                <div class="board-border">
+                    <div class="board-box">
+                        <div id="levelChosen" class="board-bar"></div>
+                        <div id="board" class="board-grid">
+                        </div>
+                    </div>
+                </div>
+            </article>
+            <article class="game-stats">
+                <div class="game-timer">
+                    <h3>TIMER :</h3>
+                    <span id="timer"></span>
+                </div>
+                <div class="game-mines">
+                    <h3>MINES Restantes :</h3>
+                    <span id="mines"></span>
+                </div>
+            </article>
+        </section>
+        <footer>
+        </footer>
+        <div id="modalWin" class="modal hidden"><span>GGGGGGGGG</span><button id="closeWin" type="button">X</button></div>
+        <div id="modalLose" class="modal hidden"><span>LOSER</span><button id="closeLose" type="button">X</button class="closeModal"></div>
+        <script type="module" src="main.js"></script>
+    </body>
+</html>
